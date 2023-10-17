@@ -130,7 +130,7 @@ func (u *User) FindUserById(id uint, db *gorm.DB) (*User, error) {
 	return user, nil
 }
 
-func (user *User) FindUserByEmal(email string, db *gorm.DB) (*User, error) {
+func (user *User) FindUserByEmail(email string, db *gorm.DB) (*User, error) {
 	err := db.Model(User{}).Where("email = ?", email).First(&user).Error
 	if err != nil {
 		return user, err

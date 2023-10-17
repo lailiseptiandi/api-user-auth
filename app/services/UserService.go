@@ -46,7 +46,7 @@ func (us *userService) RegisterUser(userInput models.UserRegiserInput) (*models.
 
 func (us *userService) LoginUser(userInput models.UserLoginInput) (*models.User, error) {
 	userModel := models.User{}
-	user, err := userModel.FindUserByEmal(userInput.Email, us.db)
+	user, err := userModel.FindUserByEmail(userInput.Email, us.db)
 	if err != nil {
 		return user, err
 	}
